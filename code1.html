@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Aventura en las Montañas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('https://source.unsplash.com/1600x900/?mountains') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .button {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button:hover {
+            background: #45a049;
+        }
+        #game-screen {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="intro-screen">
+        <h1>La Aventura en las Montañas</h1>
+        <p>¡Bienvenido, aventurero! Tu misión es encontrar un tesoro escondido en las montañas de Andorra. ¿Estás listo?</p>
+        <button class="button" onclick="startGame()">Comenzar Aventura</button>
+    </div>
+
+    <div class="container" id="game-screen">
+        <h2>Prueba 1: Encuentra el camino</h2>
+        <p>Guía al aventurero a través del laberinto para llegar al tesoro.</p>
+        <canvas id="maze-canvas" width="400" height="400" style="background: #eee; border: 2px solid #fff;"></canvas>
+        <br>
+        <button class="button" onclick="nextChallenge()">Siguiente Prueba</button>
+    </div>
+
+    <script>
+        function startGame() {
+            document.getElementById('intro-screen').style.display = 'none';
+            document.getElementById('game-screen').style.display = 'block';
+            drawMaze();
+        }
+
+        function drawMaze() {
+            const canvas = document.getElementById('maze-canvas');
+            const ctx = canvas.getContext('2d');
+
+            // Dibujar un laberinto simple (placeholder)
+            ctx.fillStyle = 'black';
+            ctx.fillRect(50, 50, 300, 10); // Línea horizontal
+            ctx.fillRect(50, 50, 10, 300); // Línea vertical
+        }
+
+        function nextChallenge() {
+            alert('¡Bien hecho! Ahora pasemos a la siguiente prueba.');
+            // Aquí se puede cargar la siguiente prueba
+        }
+    </script>
+</body>
+</html>
